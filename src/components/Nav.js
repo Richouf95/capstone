@@ -11,12 +11,12 @@ function Nav() {
           </Link>
         </li>
         <li>
-          <Link to="/" className="a">
+          <Link to="/about" className="a">
             About
           </Link>
         </li>
         <li>
-          <Link to="/" className="a">
+          <Link to="/menu" className="a">
             Menu
           </Link>
         </li>
@@ -26,12 +26,12 @@ function Nav() {
           </Link>
         </li>
         <li>
-          <Link to="/" className="a">
+          <Link to="/order-online" className="a">
             Order Online
           </Link>
         </li>
         <li>
-          <Link to="/" className="a">
+          <Link to="/login" className="a">
             Login
           </Link>
         </li>

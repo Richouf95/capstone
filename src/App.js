@@ -5,6 +5,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useReducer, useState } from "react";
 import { fetchAPI, submitAPI } from "./API/Api";
 import ConfirmedBooking from "./components/ConfirmedBooking";
+import About from "./components/AboutPage";
+import Menu from "./components/Menu";
+import Login from "./components/Login";
 
 function App() {
   const [bookingData, setBookingData] = useState({
@@ -72,6 +75,22 @@ function App() {
         <Route
           path="confirmation"
           element={<ConfirmedBooking bookingData={bookingData} />}
+        />
+        <Route
+          path="about"
+          element={<About />}
+        />
+        <Route
+          path="menu"
+          element={<Menu/>}
+        />
+        <Route
+          path="order-online"
+          element={<ConfirmedBooking bookingData={bookingData} />}
+        />
+        <Route
+          path="Login"
+          element={<Login />}
         />
       </Routes>
     </BrowserRouter>

@@ -7,6 +7,7 @@ import Footer from "./Footer";
 const About = () => {
   return (
     <>
+    <Header />
       <div className="about">
         <div className="about-content">
           <h4>Little Lemon</h4>
@@ -29,6 +30,7 @@ const About = () => {
           <img id="restaurant" src={restaurant} alt="female owner" />
         </div>
       </div>
+        <Footer />
     </>
   );
 };
