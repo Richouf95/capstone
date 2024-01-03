@@ -33,8 +33,6 @@ const BookingForm = ({
   };
 
   const handleChange = (e) => {
-    // console.log("should update errors");
-
     switch (e.target.id) {
       case "res-date":
         setAvailableTimes({ type: "update_times" });
@@ -128,6 +126,8 @@ const BookingForm = ({
     e.preventDefault();
 
     if (submitForm() === true) {
+      const itemString = JSON.stringify(bookingData);
+      localStorage.setItem("bookings", itemString);
       console.log("success");
       navigate("/confirmation");
     } else {
@@ -135,24 +135,19 @@ const BookingForm = ({
     }
   };
 
-  const [items, setItems] = useState({
-    date: "",
-    time: "",
-    guests: "",
-    occasion: "",
-  });
+  const [items, setItems] = useState();
 
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem("bookings"));
     if (items) {
       setItems(items);
+      setBookingData({...items});
     }
   }, []);
 
   const AvailableTimes = () => {
     const items = JSON.parse(localStorage.getItem("bookings"));
-
-    console.log(bookingData, items);
+    
     if (bookingData && bookingData.date && items.date !== bookingData.date) {
       return availableTimes.times.map((time) => {
         return <option key={time}>{time}</option>;

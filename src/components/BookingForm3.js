@@ -19,7 +19,6 @@ const BookingForm = ({
 
   useEffect(() => {
     validateForm();
-    console.log(bookingData);
   }, [bookingData, error]);
 
   const validateForm = () => {

@@ -30,8 +30,6 @@ function App() {
     }
   };
 
-  console.log(availableTimes)
-
   function initializeTimes() {
     setAvailableTimes({ type: "init" });
   }

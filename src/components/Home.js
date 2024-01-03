@@ -7,7 +7,7 @@ import Footer from "./Footer";
 
 
 const Home = ({bookingData}) => {
-  console.log(bookingData);
+  // console.log(bookingData);
   return (
     <>
       <Header />
