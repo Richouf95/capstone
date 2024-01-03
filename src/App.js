@@ -2,7 +2,7 @@ import "./App.css";
 import Home from "./components/Home";
 import BookingPage from "./components/BookingPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useReducer, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { fetchAPI, submitAPI } from "./API/Api";
 import ConfirmedBooking from "./components/ConfirmedBooking";
 
@@ -32,9 +32,13 @@ function App() {
 
   console.log(availableTimes)
 
-  // function initializeTimes() {
-  //   setAvailableTimes({ type: "init" });
-  // }
+  function initializeTimes() {
+    setAvailableTimes({ type: "init" });
+  }
+
+  useEffect(() => {
+    initializeTimes();
+  }, []);
 
   function updateTimes(state, action) {
     if (action.type === "init") {

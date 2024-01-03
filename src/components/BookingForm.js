@@ -199,7 +199,7 @@ const BookingForm = ({
               {
                 availableTimes.times.map((i,index) => {
                   return(
-                    <option>{i}</option>
+                    <option key={index}>{i}</option>
                   )
                 })
               }
@@ -240,7 +240,6 @@ const BookingForm = ({
           </div>
           <span className="error">{occasionError}</span>
           <button
-            onclick="handleCommand(event)"
             data-testid="submit"
             id="submitButton"
             required
